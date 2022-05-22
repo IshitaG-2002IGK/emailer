@@ -13,7 +13,7 @@ mail    = Mail(app)
 # https://www.bbc.com/news/live/world-europe-60685883
 
 
-model = pickle.load(open('model_svm.pkl','rb'))
+# model = pickle.load(open('model_svm.pkl','rb'))
 
 load_dotenv()
 
@@ -37,41 +37,35 @@ mail = Mail(app)
 ALLOWED_EXTENSIONS  = {'png', 'jpg', 'jpeg'}
 
 
-@app.route('/', methods = ["GET","POST"])
-def home():
+# @app.route('/', methods = ["GET","POST"])
+# def home():
 
-    if request.method == "POST":
+#     if request.method == "POST":
 
-        try:
+#         try:
 
-            content = request.values.get("news_content")
-            prediction = detect_content(content)
+#             content = request.values.get("news_content")
+#             prediction = detect_content(content)
 
-        except:
+#         except:
 
-            pass
+#             pass
 
-        try:
+#         try:
 
-            link = request.values.get("news_link")
-            prediction = detect_link(link)
-            print("Prediction: ", prediction)        
+#             link = request.values.get("news_link")
+#             prediction = detect_link(link)
+#             print("Prediction: ", prediction)        
 
-        except:
+#         except:
 
-            pass
+#             pass
 
-        return render_template("index.html", prediction = prediction)
+#         return render_template("index.html", prediction = prediction)
 
-    return render_template("index.html")
+#     return render_template("index.html")
 
-@app.route('/ping')
-def ping():
 
-    result = {
-        "ping"  : "pong"
-    }
-    return result
 
 if __name__== "__main__":
 
