@@ -1,7 +1,7 @@
 from flask import Flask,request, flash, redirect, render_template, request
-import pickle
-from score import predict_link_score as detect_link
-from score import predict_content_score as detect_content
+# import pickle
+# from score import predict_link_score as detect_link
+# from score import predict_content_score as detect_content
 
 from dotenv import load_dotenv
 
